@@ -4,3 +4,11 @@ module.exports = withFonts({
 		return config;
 	},
 });
+
+// require("dotenv").config();
+
+// module.exports = {
+// 	env: {
+// 		OWM_API_KEY: process.env.OWM_API_KEY,
+// 	},
+// };

@@ -37,6 +37,7 @@ const GetForecast = ({ zipCode }) => {
 	}, [view]);
 
 	const getData = async (zipCode) => {
+		console.log(process.env.OWM_API_KEY);
 		if (zipCode.length >= 5) {
 			let req = await fetch(
 				`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=c7f5c9c231892d927a5ffe42d2207c61`
@@ -97,6 +98,7 @@ const GetForecast = ({ zipCode }) => {
 					overflow: hidden;
 					transform: ${translation};
 					transition: 0.6s all;
+					height: 85vh;
 				}
 			`}</style>
 		</>

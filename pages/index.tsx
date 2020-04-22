@@ -1,8 +1,10 @@
 import react, { useState, useEffect } from "react";
 import GetForecast from "../components/GetForecast";
+import Head from "next/head";
 // import { GoSearch } from "react-icons/Go";
 
 const Home = () => {
+	console.log(process.env.OWM_API_KEY);
 	const [zipCode, setZipCode] = useState("07601");
 	const [bool, setBool] = useState(true);
 
@@ -13,6 +15,9 @@ const Home = () => {
 	};
 	return (
 		<>
+			<Head>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+			</Head>
 			{bool ? (
 				<>
 					<div className="header">

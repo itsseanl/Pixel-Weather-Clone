@@ -1,5 +1,4 @@
 import react, { useState, useEffect } from "react";
-import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/Ti";
 import HourlyGraph from "./HourlyGraph";
 
 const Today = ({ view, data, name }) => {
@@ -26,6 +25,8 @@ const Today = ({ view, data, name }) => {
 		}
 	}, [data]);
 
+	const handleTouchStart = (e) => {};
+
 	var sec = data.current.dt;
 	var date = new Date(sec * 1000);
 	var timestr = date.toLocaleTimeString();
@@ -33,22 +34,18 @@ const Today = ({ view, data, name }) => {
 
 	return (
 		<>
-			<div className="view">
+			<div className="view" onTouchStart={(e) => handleTouchStart}>
 				<h2>{name}</h2>
 
 				<div className="card">
 					<div className="left">
 						<p className="highlow low">
 							Low
-							{Math.trunc(
-								((data.daily[0].temp.min - 273.15) * 9) / 5 + 32
-							)}°F <TiArrowSortedDown />
+							{Math.trunc(((data.daily[0].temp.min - 273.15) * 9) / 5 + 32)}°F
 						</p>
 						<p className="highlow high">
 							High
-							{Math.trunc(
-								((data.daily[0].temp.max - 273.15) * 9) / 5 + 32
-							)}°F <TiArrowSortedUp />
+							{Math.trunc(((data.daily[0].temp.max - 273.15) * 9) / 5 + 32)}°F
 						</p>
 						<p className="current-temp">
 							{Math.trunc(((data.current.temp - 273.15) * 9) / 5 + 32)}°F
@@ -73,6 +70,7 @@ const Today = ({ view, data, name }) => {
 					background-color: ${bgColor};
 					margin: 0;
 					padding: 0;
+					overflow: hidden;
 				}
 				h2 {
 					text-align: center;

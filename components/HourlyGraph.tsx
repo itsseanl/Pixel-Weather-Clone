@@ -74,7 +74,7 @@ const HourlyGraph = ({ data, day }) => {
 			<style jsx>{`
 				.hourly {
 					width: 100%;
-					height: 500px;
+					height: 50%;
 				}
 			`}</style>
 		</>

@@ -1,5 +1,4 @@
 import react, { useState, useEffect } from "react";
-import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/Ti";
 import HourlyGraph from "./HourlyGraph";
 
 const Tomorrow = ({ view, data, name }) => {
@@ -40,18 +39,14 @@ const Tomorrow = ({ view, data, name }) => {
 					<div className="left">
 						<p className="highlow low">
 							Low
-							{Math.trunc(
-								((data.daily[1].temp.min - 273.15) * 9) / 5 + 32
-							)}°F <TiArrowSortedDown />
+							{Math.trunc(((data.daily[1].temp.min - 273.15) * 9) / 5 + 32)}°F
 						</p>
 						<p className="highlow high">
 							High
-							{Math.trunc(
-								((data.daily[1].temp.max - 273.15) * 9) / 5 + 32
-							)}°F <TiArrowSortedUp />
+							{Math.trunc(((data.daily[1].temp.max - 273.15) * 9) / 5 + 32)}°F
 						</p>
 						<p className="current-temp">
-							{Math.trunc(((data.daily[1].temp - 273.15) * 9) / 5 + 32)}°F
+							{Math.trunc(((data.daily[1].temp.day - 273.15) * 9) / 5 + 32)}°F
 						</p>
 						<p className="feels-like">
 							Feels like{" "}
@@ -69,11 +64,6 @@ const Tomorrow = ({ view, data, name }) => {
 				<HourlyGraph data={data} day={"tomorrow"} />
 			</div>
 			<style jsx>{`
-				:global(html, body) {
-					background-color: ${bgColor};
-					margin: 0;
-					padding: 0;
-				}
 				h2 {
 					text-align: center;
 					color: #fff;
