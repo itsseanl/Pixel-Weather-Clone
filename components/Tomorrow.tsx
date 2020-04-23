@@ -48,11 +48,6 @@ const Tomorrow = ({ view, data, name }) => {
 						<p className="current-temp">
 							{Math.trunc(((data.daily[1].temp.day - 273.15) * 9) / 5 + 32)}°F
 						</p>
-						<p className="feels-like">
-							Feels like{" "}
-							{Math.trunc(((data.daily[1].feels_like - 273.15) * 9) / 5 + 32)}
-							°F
-						</p>
 					</div>
 					<div className="right">
 						<img
@@ -105,7 +100,7 @@ const Tomorrow = ({ view, data, name }) => {
 				.highlow {
 					width: 40%;
 					display: flex;
-					justify-content: center;
+					justify-content: flex-start;
 					align-items: center;
 					flex-wrap: nowrap;
 					margin: 15px 0;

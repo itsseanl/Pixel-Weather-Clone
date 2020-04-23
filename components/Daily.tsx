@@ -35,14 +35,16 @@ const Tomorrow = ({ view, data, name }) => {
 					daily.map((day) => {
 						return (
 							<div className="day">
-								<div className="left">
-									<p>{day.time}</p>
-									<p>{day.description}</p>
-								</div>
-								<div className="right">
-									<img
-										src={`http://openweathermap.org/img/wn/${day.icon}@2x.png`}
-									/>
+								<div className="wrap">
+									<div className="left">
+										<p>{day.time}</p>
+										<p>{day.description}</p>
+									</div>
+									<div className="right">
+										<img
+											src={`http://openweathermap.org/img/wn/${day.icon}@2x.png`}
+										/>
+									</div>
 								</div>
 							</div>
 						);
@@ -75,6 +77,15 @@ const Tomorrow = ({ view, data, name }) => {
 				.day:last-of-type {
 					border-bottom: 1px solid #fff;
 				}
+				.wrap {
+					max-width: 900px;
+					left: 0;
+					right: 0;
+					margin: auto;
+					width: 100%;
+					display: flex;
+					height: 100%;
+				}
 				.left > p {
 					margin: 5px;
 					text-shadow: unset;
@@ -92,6 +103,11 @@ const Tomorrow = ({ view, data, name }) => {
 				}
 				.left {
 					align-items: flex-start;
+				}
+				@media (min-width: 768px) {
+					.right {
+						align-items: flex-end;
+					}
 				}
 			`}</style>
 		</>

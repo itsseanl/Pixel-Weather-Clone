@@ -113,7 +113,7 @@ const Today = ({ view, data, name }) => {
 				.highlow {
 					width: 40%;
 					display: flex;
-					justify-content: center;
+					justify-content: flex-start;
 					align-items: center;
 					flex-wrap: nowrap;
 					margin: 15px 0;
@@ -131,6 +131,7 @@ const Today = ({ view, data, name }) => {
 				.current-temp {
 					font-size: 102px;
 					margin: 0;
+					width: 100%;
 				}
 				img {
 					transition: 2s all;

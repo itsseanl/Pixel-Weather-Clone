@@ -50,6 +50,9 @@ const Home = () => {
 				:global(*) {
 					font-family: "Product Sans Regular", sans-serif;
 				}
+				:global(.card) {
+					max-width: 900px;
+				}
 
 				.header {
 					background: rgba(0, 0, 0, 0.6);

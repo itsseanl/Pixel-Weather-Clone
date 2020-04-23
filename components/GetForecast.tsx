@@ -79,7 +79,7 @@ const GetForecast = ({ zipCode }) => {
 					background-color: rgba(0, 0, 0, 0.6);
 				}
 				.view {
-					width: 33%;
+					width: 33.33%;
 					text-align: center;
 					color: rgba(255, 255, 255, 0.4);
 					text-transform: uppercase;
